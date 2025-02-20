@@ -1,0 +1,117 @@
+<div id="contact" class="wave">
+  <h2>Contact</h2>
+  <div class="box">
+    <p>Feel free to reach out to me directly at</p>
+    <div class="mail">
+      <a href="mailto:david@nentwich.dev">
+        <img src="/img/svg/link/email.svg" alt="Email" loading="lazy" />
+      </a>
+      david@nentwich.dev
+    </div>
+    <div class="other">
+      <a href="https://www.linkedin.com/in/david-nentwich/" target="_blank"
+        ><img src="/img/svg/link/linkedin.svg" alt="LinkedIn" loading="lazy" /></a
+      >
+      <a href="https://github.com/Nenthor" target="_blank"
+        ><img src="/img/svg/link/github.svg" alt="GitHub" loading="lazy" /></a
+      >
+    </div>
+  </div>
+  <p>Thanks for stopping by! Have a great day ^^</p>
+</div>
+
+<style>
+  #contact {
+    width: 100%;
+    background-color: var(--secondary-medium);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 140px;
+  }
+
+  .wave {
+    --mask: radial-gradient(84px at 50% 117.5px, #000 99%, #0000 101%) calc(50% - 100px) 0/200px
+        100%,
+      radial-gradient(84px at 50% -67.5px, #0000 99%, #000 101%) 50% 50px/200px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+
+  h2 {
+    position: relative;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 5px;
+  }
+
+  #contact > p {
+    margin-bottom: 16px;
+    font-weight: 300;
+    color: var(--primary-light);
+    font-style: italic;
+    text-align: center;
+  }
+
+  .box {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 128px 32px;
+    padding: 32px;
+    border-radius: 16px;
+    gap: 32px;
+    max-width: calc(100vw - 64px - 64px);
+  }
+
+  .box > p {
+    color: black;
+    text-align: center;
+  }
+
+  .mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 1.2rem;
+    line-height: 100%;
+    font-weight: 300;
+  }
+
+  .box a {
+    aspect-ratio: 1 / 1;
+    width: 64px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .box a:hover {
+    transform: scale(1.1);
+  }
+
+  .other {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 4vw, 100vw);
+  }
+
+  img {
+    vertical-align: middle;
+    max-width: 100%;
+  }
+</style>

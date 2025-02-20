@@ -1,0 +1,261 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  priority: number;
+  links: string[];
+  image: string;
+}
+
+const projects: Project[] = [
+  {
+    title: 'Inzidenz Corona',
+    description:
+      'Tracking corona incidence values for your district during the pandemic. The connected API service has already been discontinued.',
+    priority: 30,
+    links: ['https://chemiegames.itch.io/inzidenz?secret=sLvebfS81dJ4Zb5lS7cFzkFhEwY'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FekMKniFmhFYvgsdWLxRl.webp',
+  },
+  {
+    title: 'ChemieGenie',
+    description:
+      'A tool for students to better understand connections between chemical models. Can be used for modern teaching. Developed with Unity & WebGL.',
+    priority: 80,
+    links: ['https://play.unity.com/mg/other/web-x9mil', 'https://github.com/Nenthor/ChemieGenie'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FIcO3o1pTZTkD1q64HAJY.webp',
+  },
+  {
+    title: 'SoccerTipico',
+    description:
+      'Live betting site for a college soccer night. Users can bet their coins on a team and receive a calculated percentage of their stake if successful. Could handle up to 300 users at once.',
+    priority: 40,
+    links: ['https://github.com/Nenthor/SoccerTipico'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FXWFhs1LX4XrdJyGnNBlt.webp',
+  },
+  {
+    title: 'BWINF - 2. Price',
+    description:
+      'Computer science competition at national level. As a reward, I was able to visit start-ups and come into contact with lots of talented people.',
+    priority: 60,
+    links: ['https://bwinf.de/bundeswettbewerb/41/2/'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FPLZvwo3vjT4mPNfhYhrk.webp',
+  },
+  {
+    title: 'Dart Calculator',
+    description:
+      'Small project for tracking a game of darts. The underlying calculations are simple, but the user interface makes it appealing and easy to use.',
+    priority: 40,
+    links: ['https://dart.nentwich.dev/', 'https://github.com/Nenthor/Dart'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2Fa5BuWN1tdYVwVvYt42ni.webp',
+  },
+  {
+    title: 'CrabTrades',
+    description:
+      'AI powered stock trading bot. Uses Tensorflow and an appealing UI design. Although it did not go to the moon, it was still an invaluable lesson.',
+    priority: 90,
+    links: ['https://crabtrades.nentwich.dev/', 'https://github.com/Nenthor/CrabTrades'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FJYSkLQTNy3pBZCcwcY8z.webp',
+  },
+  {
+    title: 'EM-Betting',
+    description:
+      'Website for soccer betting during the European Championship in Germany. Uses an open API service and has a leaderboard. You can still see the results, but for privacy reasons all users are renamed.',
+    priority: 85,
+    links: ['https://em.nentwich.dev/', 'https://github.com/Nenthor/EM-Betting'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FjGVQMnrXAqF0h1Mg38wN.webp',
+  },
+  {
+    title: 'PiCloud',
+    description:
+      'An application that can run on a Raspberry Pi and serves as cloud storage and streaming platform. Created with Sveltekit. Access your files from anywhere. Particularly suitable for private use in a local network.',
+    priority: 86,
+    links: ['https://github.com/Nenthor/PiCloud'],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2F0R8DGJARMZflHdpsvNde.webp',
+  },
+  {
+    title: 'Nuke these Greens',
+    description:
+      'First GameJam. Your playing as the martians, with the goal to destroy earth. It was a fun endeavor where I got to know the various facets of game development. Ranked among the top 10%.',
+    priority: 30,
+    links: [
+      'https://bearwithmeplease.itch.io/nuke-these-greens',
+      'https://github.com/BearWithMePlease/space-war',
+    ],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FoNSmMfasJ06VVSJM5M3J.webp',
+  },
+  {
+    title: 'Survive the Bunker',
+    description:
+      'Second GameJam. You can build your own bunker system and try to survive in it. Compared to the last GameJam, a lot of techniques have been improved. Ranked among the top 10%.',
+    priority: 30,
+    links: [
+      'https://bearwithmeplease.itch.io/survive-the-bunker',
+      'https://github.com/BearWithMePlease/spooky',
+    ],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FYrq6Eu21uMl1WlOVkzql.webp',
+  },
+  {
+    title: 'Ekart',
+    priority: 101,
+    description:
+      'A fully functional electric e-kart packed with advanced features, including music, ultrasonic sensors, a touchscreen display, GPS tracking with a custom-built map system, and many more exciting capabilities.',
+    links: [
+      'https://youtu.be/j2GO4vGd4Zs',
+      'https://kskmse.blog/p-seminar-emobil',
+      'https://github.com/Nenthor/Evolution',
+    ],
+    image:
+      'https://storage.googleapis.com/family-webserver.appspot.com/images%2Fprojects%2FN3YtDJDdjGuRDUPY8HQM.webp',
+  },
+].sort((p1, p2) => {
+  return p2.priority - p1.priority;
+});
+
+function getLinkType(link: string) {
+  if (link.includes('youtu.be') || link.includes('youtube')) return '/img/svg/link/youtube.svg';
+  if (link.includes('github.com')) return '/img/svg/link/github.svg';
+  return '/img/svg/link/globe.svg';
+}
+---
+
+<div id="projects">
+  <h2>Projects</h2>
+  <div class="box">
+    {
+      projects.map((project) => (
+        <div class="project">
+          <a href={project.links[0]} target="_blank">
+            <img src={project.image} alt={project.title + ' Thumbnail'} loading="lazy" />
+          </a>
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+          <div class="links">
+            {project.links.map((link) => (
+              <a href={link} target="_blank">
+                <img src={getLinkType(link)} alt="Link" loading="lazy" />
+              </a>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  #projects {
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 64px 0;
+  }
+
+  h2 {
+    position: relative;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 5px;
+  }
+
+  .box {
+    width: 90vw;
+    max-width: 1600px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin: 64px;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 500px;
+    border-radius: 100px 100px 10px 10px;
+    padding-bottom: 8px;
+    box-shadow: 0 0 10px var(--secondary-dark);
+  }
+
+  .project > a {
+    display: block;
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+  }
+
+  .project > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .project > a > img:hover {
+    transform: scale(1.1);
+  }
+
+  .project > h3 {
+    text-align: center;
+    color: black;
+    margin: 0 16px;
+    font-size: 1.3rem;
+  }
+
+  .project > p {
+    text-align: justify;
+    color: #666;
+    margin: 0 16px;
+    flex-grow: 1;
+  }
+
+  .project > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 16px 32px 8px 32px;
+    gap: 32px;
+  }
+
+  .project > div > a {
+    aspect-ratio: 1 / 1;
+    width: 32px;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .project > div > a:hover {
+    transform: scale(1.1);
+  }
+
+  .project > div img {
+    vertical-align: middle;
+    max-width: 100%;
+  }
+</style>

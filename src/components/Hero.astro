@@ -1,0 +1,119 @@
+<div id="hero">
+  <div class="title">
+    <p>Hey, I'm</p>
+    <h1>David Nentwich</h1>
+    <p>Enthusiastic computer science student ^^</p>
+  </div>
+  <div class="action_call">
+    <a href="#about">Show more</a>
+  </div>
+</div>
+
+<style>
+  #hero {
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh - 100px);
+    margin: 0 16px;
+    max-width: calc(100vw - 32px);
+  }
+
+  .title {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title > h1 {
+    font-weight: 900;
+    font-size: clamp(4rem, 10vw, 7rem);
+    color: var(--primary);
+    text-align: center;
+  }
+
+  .title > p {
+    font-weight: 200;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    text-align: center;
+  }
+
+  .action_call {
+    display: flex;
+    align-items: end;
+    margin: 16px 0 10vh 0;
+  }
+
+  .action_call > a {
+    position: relative;
+    border-radius: 0;
+    padding: 16px 64px;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 800;
+    background-color: var(--secondary);
+    color: white;
+    letter-spacing: 2px;
+    z-index: 10;
+    overflow: hidden;
+    transition:
+      border-radius 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+  }
+
+  .action_call > a::before {
+    content: '';
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: calc(100% + 16px);
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    background-image: conic-gradient(
+      from 0deg,
+      var(--primary-light),
+      var(--primary-dark),
+      var(--primary-light)
+    );
+    animation: rotateGradient 3s linear infinite;
+    z-index: -2;
+  }
+
+  .action_call > a::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: var(--secondary);
+    z-index: -1;
+  }
+
+  @keyframes rotateGradient {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .action_call > a:hover {
+    background-color: var(--primary);
+    transform: scale(1.05);
+    border-radius: 10px;
+  }
+
+  .action_call > a:hover::before {
+    display: none;
+  }
+
+  .action_call > a:hover::after {
+    display: none;
+  }
+</style>

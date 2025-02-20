@@ -1,0 +1,95 @@
+---
+export interface Props {
+  techItems: TechItem[];
+}
+
+export interface TechItem {
+  name: string;
+  logo: string;
+  link: string;
+  type: 'Creative' | 'GameDev' | 'DevOps' | 'WebDev' | 'Language' | 'AI';
+}
+---
+
+<ul class="tech">
+  {
+    Astro.props.techItems.map((item) => (
+      <li class="techItem">
+        <img class="side" src={item.logo} alt={item.name + ' icon'} loading="lazy" />
+        <div class="side">
+          <a href={item.link} class="techTitle" target="_blank">
+            {item.name}
+          </a>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .tech {
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .techItem {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(100px, 10vw, 150px);
+    transform-style: preserve-3d;
+    transition: transform 0.75s ease-in-out;
+  }
+
+  .techItem:hover {
+    transform: rotateX(90deg);
+  }
+
+  .techItem:hover img {
+    border-radius: 0;
+  }
+
+  .side {
+    aspect-ratio: 1/1;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .techItem img {
+    width: calc(100% - 2 * clamp(10px, 2vw, 20px));
+    padding: clamp(10px, 2vw, 20px);
+    background-color: white;
+    transform: translateZ(calc(clamp(100px, 10vw, 150px) / 2));
+    border-radius: 15px;
+    transition: border-radius 0.3s ease-in-out;
+  }
+
+  .techItem div {
+    width: calc(100% - 10px);
+    padding: 5px;
+    color: white;
+    background-color: var(--secondary-light);
+    transform: rotateX(-90deg) translateZ(calc(clamp(100px, 10vw, 150px) / 2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .techTitle {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .side > a {
+    color: var(--primary-light);
+    text-decoration: underline;
+  }
+</style>

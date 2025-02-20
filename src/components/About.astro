@@ -1,0 +1,360 @@
+---
+import type { TechItem } from './Tech.astro';
+import Tech from './Tech.astro';
+
+const techItems: TechItem[] = [
+  {
+    name: 'Java',
+    logo: '/img/svg/tech/java.svg',
+    type: 'Language',
+    link: 'https://www.java.com/',
+  },
+  {
+    name: 'Python',
+    logo: '/img/svg/tech/python.svg',
+    type: 'Language',
+    link: 'https://www.python.org/',
+  },
+  {
+    name: 'JavaScript',
+    logo: '/img/svg/tech/javascript.svg',
+    type: 'Language',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
+  {
+    name: 'TypeScript',
+    logo: '/img/svg/tech/typescript.svg',
+    type: 'Language',
+    link: 'https://www.typescriptlang.org/',
+  },
+
+  {
+    name: 'Google Cloud',
+    logo: '/img/svg/tech/gcloud.svg',
+    type: 'DevOps',
+    link: 'https://cloud.google.com/',
+  },
+  {
+    name: 'Docker',
+    logo: '/img/svg/tech/docker.svg',
+    type: 'DevOps',
+    link: 'https://www.docker.com/',
+  },
+  {
+    name: 'Portainer',
+    logo: '/img/svg/tech/portainer.svg',
+    type: 'DevOps',
+    link: 'https://www.portainer.io/',
+  },
+  {
+    name: 'Cloudflare',
+    logo: '/img/svg/tech/cloudflare.svg',
+    type: 'DevOps',
+    link: 'https://www.cloudflare.com/',
+  },
+  {
+    name: 'V-Server',
+    logo: '/img/svg/tech/vps.svg',
+    type: 'DevOps',
+    link: 'https://en.wikipedia.org/wiki/Virtual_private_server',
+  },
+  {
+    name: 'Linux',
+    logo: '/img/svg/tech/linux.svg',
+    type: 'DevOps',
+    link: 'https://www.kernel.org/',
+  },
+  {
+    name: 'GitHub Action',
+    logo: '/img/svg/tech/github_action.svg',
+    type: 'DevOps',
+    link: 'https://github.com/features/actions',
+  },
+  {
+    name: 'Git',
+    logo: '/img/svg/tech/git.svg',
+    type: 'DevOps',
+    link: 'https://git-scm.com/',
+  },
+
+  {
+    name: 'HTML',
+    logo: '/img/svg/tech/html.svg',
+    type: 'WebDev',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+  },
+  {
+    name: 'CSS',
+    logo: '/img/svg/tech/css.svg',
+    type: 'WebDev',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  },
+  {
+    name: 'Node.js',
+    logo: '/img/svg/tech/nodejs.svg',
+    type: 'WebDev',
+    link: 'https://nodejs.org/',
+  },
+  {
+    name: 'Nginx',
+    logo: '/img/svg/tech/nginx.svg',
+    type: 'WebDev',
+    link: 'https://nginx.org/',
+  },
+  {
+    name: 'SvelteKit',
+    logo: '/img/svg/tech/sveltekit.svg',
+    type: 'WebDev',
+    link: 'https://svelte.dev/docs/kit/introduction',
+  },
+  {
+    name: 'Firebase',
+    logo: '/img/svg/tech/firebase.svg',
+    type: 'WebDev',
+    link: 'https://firebase.google.com/',
+  },
+  {
+    name: 'Npm',
+    logo: '/img/svg/tech/npm.svg',
+    type: 'WebDev',
+    link: 'https://www.npmjs.com/',
+  },
+  {
+    name: 'JWToken',
+    logo: '/img/svg/tech/jwtoken.svg',
+    type: 'WebDev',
+    link: 'https://jwt.io/',
+  },
+  {
+    name: 'PocketBase',
+    logo: '/img/svg/tech/pocketbase.svg',
+    type: 'WebDev',
+    link: 'https://pocketbase.io/',
+  },
+
+  {
+    name: 'Unity',
+    logo: '/img/svg/tech/unity.svg',
+    type: 'GameDev',
+    link: 'https://unity.com/',
+  },
+  {
+    name: 'Godot',
+    logo: '/img/svg/tech/godot.svg',
+    type: 'GameDev',
+    link: 'https://godotengine.org/',
+  },
+
+  {
+    name: 'ChatGPT',
+    logo: '/img/svg/tech/chatgpt.svg',
+    type: 'AI',
+    link: 'https://chatgpt.com/',
+  },
+  {
+    name: 'Stable Diffusion',
+    logo: '/img/svg/tech/stable_diffusion.webp',
+    type: 'AI',
+    link: 'https://github.com/CompVis/stable-diffusion',
+  },
+
+  {
+    name: 'Davinci Resolve',
+    logo: '/img/svg/tech/davinci_resolve.svg',
+    type: 'Creative',
+    link: 'https://www.blackmagicdesign.com/products/davinciresolve',
+  },
+  {
+    name: 'Blender',
+    logo: '/img/svg/tech/blender.svg',
+    type: 'Creative',
+    link: 'https://www.blender.org/',
+  },
+  {
+    name: 'Miro',
+    logo: '/img/svg/tech/miro.svg',
+    type: 'Creative',
+    link: 'https://miro.com/',
+  },
+  {
+    name: 'Figma',
+    logo: '/img/svg/tech/figma.svg',
+    type: 'Creative',
+    link: 'https://www.figma.com/',
+  },
+  {
+    name: 'GIMP',
+    logo: '/img/svg/tech/gimp.svg',
+    type: 'Creative',
+    link: 'https://www.gimp.org/',
+  },
+  {
+    name: 'RealityCapture',
+    logo: '/img/svg/tech/reality_capture.svg',
+    type: 'Creative',
+    link: 'https://www.capturingreality.com/',
+  },
+];
+---
+
+<div id="about" class="wave">
+  <h2>About</h2>
+  <p>
+    I am David Nentwich, a passionate computer science student at Munich University of Applied
+    Sciences.
+    <br /><br />
+    I am currently improving my skills in web development, DevOps, software engineering and Game Development
+    through hands-on projects and collaboration. I love turning ideas into real-world applications and
+    exploring new technologies. I am always eager to learn and innovate and look forward to connecting
+    with like-minded people and contributing to meaningful technical advancements.
+  </p>
+  <a href="/document/cv.pdf" target="_blank" class="cv">
+    <img src="/img/svg/newtab.svg" alt="New tab" />
+    <p>Open Resumé</p>
+  </a>
+  <h3>Technologies I have used:</h3>
+  <div class="techbox">
+    <div>
+      <h4>Programming Languages</h4>
+      <Tech techItems={techItems.filter((i) => i.type === 'Language')} />
+    </div>
+
+    <div>
+      <h4>DevOps/Infrastructure</h4>
+      <Tech techItems={techItems.filter((i) => i.type === 'DevOps')} />
+    </div>
+
+    <div>
+      <h4>Web Development</h4>
+      <Tech techItems={techItems.filter((i) => i.type === 'WebDev')} />
+    </div>
+
+    <div>
+      <h4>Game Development</h4>
+      <Tech techItems={techItems.filter((i) => i.type === 'GameDev')} />
+    </div>
+
+    <div>
+      <h4>AI Tools</h4>
+      <Tech techItems={techItems.filter((i) => i.type === 'AI')} />
+    </div>
+
+    <div>
+      <h4>Design/Creative Tools</h4>
+      <Tech techItems={techItems.filter((i) => i.type === 'Creative')} />
+    </div>
+  </div>
+</div>
+
+<style>
+  #about {
+    background-color: var(--secondary-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 140px 0;
+    gap: 42px;
+  }
+
+  .wave {
+    --mask: radial-gradient(84px at 50% 117.5px, #000 99%, #0000 101%) calc(50% - 100px) 0/200px 51%
+        repeat-x,
+      radial-gradient(84px at 50% -67.5px, #0000 99%, #000 101%) 50% 50px/200px calc(51% - 50px)
+        repeat-x,
+      radial-gradient(84px at 50% calc(100% - 117.5px), #000 99%, #0000 101%) calc(50% - 100px) 100%/200px
+        51% repeat-x,
+      radial-gradient(84px at 50% calc(100% + 67.5px), #0000 99%, #000 101%) 50% calc(100% - 50px) /
+        200px calc(51% - 50px) repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+
+  h2 {
+    position: relative;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 5px;
+  }
+
+  #about > p {
+    width: 75vw;
+    max-width: 1200px;
+    text-align: justify;
+    font-size: 1.1rem;
+  }
+
+  .cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px 32px;
+  }
+
+  .cv:hover {
+    background-color: var(--primary);
+  }
+
+  .cv:hover > p {
+    color: white;
+  }
+
+  .cv > img {
+    aspect-ratio: 1/1;
+    height: 32px;
+  }
+
+  .cv > p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+  }
+
+  .techbox {
+    background-color: var(--secondary);
+    padding: 32px;
+    border-radius: 32px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 64px 128px;
+    max-width: min(75vw, 1600px);
+  }
+
+  h3 {
+    width: calc(100% - 16px);
+    text-align: center;
+    font-size: 2rem;
+    margin: 32px 8px -32px 8px;
+  }
+
+  .techbox h4 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 650px) {
+    #about > p {
+      width: 90vw;
+    }
+  }
+</style>
