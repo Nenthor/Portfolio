@@ -1,32 +1,35 @@
+---
+import translations from '../locales/BasicFrame';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+
+const { lang } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Discover the portfolio of David Nentwich - Enthusiastic computer science student"
-    />
-    <title>David Nentwich | Portfolio</title>
-    <link rel="canonical" href="https://nentwich.dev/" />
+    <meta name="description" content={translations.description[lang]} />
+    <title>{translations.title[lang]}</title>
+    <link rel="canonical" href="https://nentwich.dev/en/" />
+    <link rel="alternate" hreflang="en" href="https://nentwich.dev/en/" />
+    <link rel="alternate" hreflang="de" href="https://nentwich.dev/de/" />
 
     <!-- Open Graph (Social Sharing) -->
-    <meta property="og:title" content="David Nentwich | Portfolio" />
-    <meta
-      property="og:description"
-      content="Discover the portfolio of David Nentwich - Enthusiastic computer science student"
-    />
+    <meta property="og:title" content={translations.title[lang]} />
+    <meta property="og:description" content={translations.description[lang]} />
     <meta property="og:url" content="https://nentwich.dev/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://nentwich.dev/img/preview.png" />
 
     <!-- Twitter Card (For Twitter/X Sharing) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="David Nentwich | Portfolio" />
-    <meta
-      name="twitter:description"
-      content="Discover the portfolio of David Nentwich - Enthusiastic computer science student"
-    />
+    <meta name="twitter:title" content={translations.title[lang]} />
+    <meta name="twitter:description" content={translations.description[lang]} />
     <meta name="twitter:image" content="https://nentwich.dev/img/preview.png" />
 
     <!-- Favicon -->
