@@ -1,6 +1,8 @@
 User-agent: *
 Disallow: /
 Allow: /$
+Allow: /en$
+Allow: /en/$
 Allow: /img/icon/*
 Allow: /favicon.ico$
 Allow: /img/preview.png$
