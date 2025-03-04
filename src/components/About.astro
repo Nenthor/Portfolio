@@ -2,6 +2,14 @@
 import type { TechItem } from './Tech.astro';
 import Tech from './Tech.astro';
 
+import translations from '../locales/About';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+
+const { lang } = Astro.props;
+
 const techItems: TechItem[] = [
   {
     name: 'Java',
@@ -210,51 +218,45 @@ const techItems: TechItem[] = [
 ---
 
 <div id="about" class="wave">
-  <h2>About</h2>
+  <h2>{translations.title[lang]}</h2>
   <p>
-    I am David Nentwich, a passionate computer science student at Munich University of Applied
-    Sciences.
+    {translations.intro_short[lang]}
     <br /><br />
-    I am currently improving my skills in web development, DevOps, software engineering and game development
-    through hands-on projects and collaboration. Alongside my studies, I actively develop these skills
-    by not only relying on university courses, but also working on personal projects and exploring new
-    technologies. I love turning ideas into real-world applications and am always willing to learn and
-    innovate. I look forward to connecting with like-minded people and contributing to meaningful technical
-    advancements.
+    {translations.intro_long[lang]}
   </p>
-  <a href="/document/cv.pdf" target="_blank" class="cv">
+  <a href={translations.resume_link[lang]} target="_blank" rel="noopener noreferrer" class="cv">
     <img src="/img/svg/newtab.svg" alt="New tab" />
-    <p>Open Resumé</p>
+    <p>{translations.open_resume[lang]}</p>
   </a>
-  <h3>Technologies I have used:</h3>
+  <h3>{translations.tech_title[lang]}</h3>
   <div class="techbox">
     <div>
-      <h4>Programming Languages</h4>
+      <h4>{translations.tech_languages[lang]}</h4>
       <Tech techItems={techItems.filter((i) => i.type === 'Language')} />
     </div>
 
     <div>
-      <h4>DevOps/Infrastructure</h4>
+      <h4>{translations.tech_devops[lang]}</h4>
       <Tech techItems={techItems.filter((i) => i.type === 'DevOps')} />
     </div>
 
     <div>
-      <h4>Web Development</h4>
+      <h4>{translations.tech_web[lang]}</h4>
       <Tech techItems={techItems.filter((i) => i.type === 'WebDev')} />
     </div>
 
     <div>
-      <h4>Game Development</h4>
+      <h4>{translations.tech_game[lang]}</h4>
       <Tech techItems={techItems.filter((i) => i.type === 'GameDev')} />
     </div>
 
     <div>
-      <h4>AI Tools</h4>
+      <h4>{translations.tech_ai[lang]}</h4>
       <Tech techItems={techItems.filter((i) => i.type === 'AI')} />
     </div>
 
     <div>
-      <h4>Design/Creative Tools</h4>
+      <h4>{translations.tech_creative[lang]}</h4>
       <Tech techItems={techItems.filter((i) => i.type === 'Creative')} />
     </div>
   </div>

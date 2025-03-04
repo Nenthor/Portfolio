@@ -1,9 +1,19 @@
+---
+import translations from '../locales/Nav';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+
+const { lang } = Astro.props;
+---
+
 <nav>
   <a href="/">Nentwich</a>
   <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">{translations.about[lang]}</a>
+    <a href="#projects">{translations.projects[lang]}</a>
+    <a href="#contact">{translations.contact[lang]}</a>
   </div>
 </nav>
 

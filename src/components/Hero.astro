@@ -1,11 +1,21 @@
+---
+import translations from '../locales/Hero';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+
+const { lang } = Astro.props;
+---
+
 <div id="hero">
   <div class="title">
-    <p>Hello, I'm</p>
+    <p>{translations.pretitle[lang]}</p>
     <h1>David Nentwich</h1>
-    <p>Enthusiastic computer science student</p>
+    <p>{translations.posttitle[lang]}</p>
   </div>
   <div class="action_call">
-    <a href="#about">Show more</a>
+    <a href="#about">{translations.more[lang]}</a>
   </div>
 </div>
 

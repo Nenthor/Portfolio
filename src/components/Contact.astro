@@ -1,7 +1,17 @@
+---
+import translations from '../locales/Contact';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+
+const { lang } = Astro.props;
+---
+
 <div id="contact" class="wave">
-  <h2>Contact</h2>
+  <h2>{translations.title[lang]}</h2>
   <div class="box">
-    <p>Feel free to reach out to me directly at</p>
+    <p>{translations.encouragement[lang]}</p>
     <div class="mail">
       <a href="mailto:david@nentwich.dev">
         <img src="/img/svg/link/email.svg" alt="Email" loading="lazy" />
@@ -9,15 +19,18 @@
       david@nentwich.dev
     </div>
     <div class="other">
-      <a href="https://www.linkedin.com/in/david-nentwich/" target="_blank"
+      <a
+        href="https://www.linkedin.com/in/david-nentwich/"
+        target="_blank"
+        rel="noopener noreferrer"
         ><img src="/img/svg/link/linkedin.svg" alt="LinkedIn" loading="lazy" /></a
       >
-      <a href="https://github.com/Nenthor" target="_blank"
+      <a href="https://github.com/Nenthor" target="_blank" rel="noopener noreferrer"
         ><img src="/img/svg/link/github.svg" alt="GitHub" loading="lazy" /></a
       >
     </div>
   </div>
-  <p>Thanks for stopping by! Have a great day ^^</p>
+  <p>{translations.thankyou[lang]}</p>
 </div>
 
 <style>
