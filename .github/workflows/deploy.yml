@@ -48,8 +48,11 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} << 'EOF'
+            export NVM_DIR=/home/${{ secrets.SSH_USERNAME }}/.nvm
+            source /home/${{ secrets.SSH_USERNAME }}/.nvm/nvm.sh
             cd ${{ secrets.PATH }}
+            git reset --hard
             git pull origin main
             npm ci
             npm run build
