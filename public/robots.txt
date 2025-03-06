@@ -3,6 +3,8 @@ Disallow: /
 Allow: /$
 Allow: /en$
 Allow: /en/$
+Allow: /de$
+Allow: /de/$
 Allow: /img/icon/*
 Allow: /favicon.ico$
 Allow: /img/preview.png$
