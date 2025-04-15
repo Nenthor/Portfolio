@@ -95,6 +95,14 @@ const translations = {
     en: 'https://youtu.be/j2GO4vGd4Zs',
     de: 'https://youtu.be/85icLjXTWaI',
   },
+  lorem_scriptum_title: {
+    en: 'LoremScriptum',
+    de: 'LoremScriptum',
+  },
+  lorem_scriptum_description: {
+    en: 'LoremScriptum is a new compiled programming language featuring Latin-inspired syntax and mathematical symbols. It uses LLVM to generate executable code for any Linux or Windows system.',
+    de: 'LoremScriptum ist eine neue kompilierte Programmiersprache mit einer vom Lateinischen inspirierten Syntax und mathematischen Symbolen. Sie verwendet LLVM, um ausführbaren Code für jedes Linux- oder Windows-System zu erzeugen.',
+  },
 };
 
 export default translations;
